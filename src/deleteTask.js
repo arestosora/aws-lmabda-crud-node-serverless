@@ -10,7 +10,7 @@ const deleteTask = async (event) => {
     }).promise()
 
     return {
-        statusCode: 204,
+        status: 204,
         body: 'Task has been succesfully deleted.'
     }
 }
