@@ -10,14 +10,14 @@ provider:
   runtime: nodejs20.x
   region: us-east-1
   iam:
-    role: arn:aws:iam::590704828383:role/LabRole
-    deploymentRole: arn:aws:iam::590704828383:role/LabRole
+    role: arn:aws:iam::XXXXXXXX:role/LabRole
+    deploymentRole: arn:aws:iam::XXXXXXXX:role/LabRole
   iamRoleStatements:
     - Effect: Allow
       Action: 
         - dynamodb:*
       Resource: 
-        - arn:aws:dynamodb:us-east-1:590704828383:table/TaskTable
+        - arn:aws:dynamodb:us-east-1:XXXXXXXX:table/TaskTable
 
 functions:
   hello:
