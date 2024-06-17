@@ -8,11 +8,41 @@ service: aws-lmabda-crud-node-serverless
 provider:
   name: aws
   runtime: nodejs20.x
+  region: us-east-1
+  iam:
+    role: arn:aws:iam::590704828383:role/LabRole
+    deploymentRole: arn:aws:iam::590704828383:role/LabRole
+  iamRoleStatements:
+    - Effect: Allow
+      Action: 
+        - dynamodb:*
+      Resource: 
+        - arn:aws:dynamodb:us-east-1:590704828383:table/TaskTable
 
 functions:
   hello:
-    handler: handler.hello
+    handler: src/hello.hello
     events:
       - httpApi:
           path: /
           method: get
+  addTask:
+    handler: src/addTask.addTask
+    events:
+      - httpApi:
+          path: /tasks
+          method: post
+
+resources:
+  Resources:
+    TaskTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: TaskTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
