@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "28968729-3889-4bbc-ac46-304378fc0460",
+		"_postman_id": "d7352bec-fe82-48b1-afe1-fcb332b0c477",
 		"name": "Lambda Crud",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "36357012"
@@ -131,7 +131,7 @@
 	"variable": [
 		{
 			"key": "endpoint",
-			"value": "https://rid7lml30g.execute-api.us-east-1.amazonaws.com",
+			"value": "",
 			"type": "string"
 		}
 	]
