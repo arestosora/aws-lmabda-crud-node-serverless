@@ -7,7 +7,7 @@ const getTasks = async (event) => {
     }).promise()
 
     return {
-        status: 200,
+        statusCode: 200,
         body: JSON.stringify(data.Items)
     }
 }
